@@ -1,6 +1,6 @@
 
 // so this date is September 30, 2013 at 11:59 PM, therefore this shouldnt be changed, unless your changing the countdown date
-var cutoff_date = new Date(2013, 12, 30, 20, 59, 59, 99); // New years 2013 
+var cutoff_date = new Date(2013, 12, 31, 23, 59, 59, 99); // New years 2013 
 
     function getMyTimer(cutoff_date, offset, logic)
     {
@@ -112,8 +112,12 @@ var cutoff_date = new Date(2013, 12, 30, 20, 59, 59, 99); // New years 2013
         {
         var result = Math.floor(diff / logic_all[key]);
         diff -= Math.floor(result * logic_all[key]);
-        console.log(result);
-        if(result == 1){
+
+        if(result == 0)
+        {
+            continue;
+        }
+        else if(result == 1){
             console.log(time += result + ' ' + key.substring(0, key.length - 1) + ' ' );
         } else{
             time += result + ' ' + key + ' ';
