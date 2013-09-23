@@ -1,6 +1,6 @@
 
 // so this date is September 30, 2013 at 11:59 PM, therefore this shouldnt be changed, unless your changing the countdown date
-var cutoff_date = new Date(2013, 12, 30, 23, 59, 59, 99); // New years 2013 
+var cutoff_date = new Date(2013, 12, 30, 20, 59, 59, 99); // New years 2013 
 
     function getMyTimer(cutoff_date, offset, logic)
     {
@@ -18,7 +18,7 @@ var cutoff_date = new Date(2013, 12, 30, 23, 59, 59, 99); // New years 2013
         |                     down to. Needs to be of JavaScript Date object, and the more specific you get with that
         |                     object, the more accurate the countdown will be.
         |       offset      - (OPTIONAL) This is a variable describing the timezone offset from UTC/GMT. The reason for this variable
-        |                     is to calculate the same countdown for everyone, perhaps relative to a remote server, etc. To 
+        |                     is to calculate the same countdown for everyone, perhaps relative to a remote server, location, etc. To 
         |                     find out more about timezone offsets, google "Timezone offsets" & I'm sure you'll find what you're
         |                     looking for. For the record, yes this variable can be positive OR negative, and can also be of a decimal
         |                     point, but needs to be in increments of .5 (4, 4.5, -5, -5.5 etc.)
@@ -112,7 +112,13 @@ var cutoff_date = new Date(2013, 12, 30, 23, 59, 59, 99); // New years 2013
         {
         var result = Math.floor(diff / logic_all[key]);
         diff -= Math.floor(result * logic_all[key]);
-        time += result + ' ' + key + ' ';
+        console.log(result);
+        if(result == 1){
+            console.log(time += result + ' ' + key.substring(0, key.length - 1) + ' ' );
+        } else{
+            time += result + ' ' + key + ' ';
+        }
+        
         }
 
         container.innerHTML = time;
