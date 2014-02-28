@@ -1,6 +1,7 @@
 
-// so this date is September 30, 2013 at 11:59 PM, therefore this shouldnt be changed, unless your changing the countdown date
-var cutoff_date = new Date(2013, 12, 31, 23, 59, 59, 99); // New years 2013 
+// so this date is December 31, 2013 at 11:59 PM, therefore this shouldnt be changed, unless your changing the countdown date
+var cutoff_date = new Date(2014, 11, 31, 23, 59, 59, 99); // New years 2014 
+document.write(cutoff_date.getMonth());
 
     function getMyTimer(cutoff_date, offset, logic)
     {
