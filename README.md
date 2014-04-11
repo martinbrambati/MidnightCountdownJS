@@ -23,3 +23,8 @@ timer.update();
 setInterval(function(){  <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    timer.update();  <br />
 }, 1000);  <br />
+
+
+<br /><br /><br />
+
+Yes it is that easy. 6 lines of code, and you have a functional timer. :)
